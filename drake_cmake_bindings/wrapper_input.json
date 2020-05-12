@@ -1,0 +1,8 @@
+{
+  "classes": {
+    "drake::RandomGenerator": {
+      "file": "drake/common/random.h",
+      "inst": []
+    }
+  }
+}
