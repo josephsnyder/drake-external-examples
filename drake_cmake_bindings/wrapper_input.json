@@ -4,5 +4,17 @@
       "file": "drake/common/random.h",
       "inst": []
     }
+  },
+  "symbolic": {
+    "classes": {
+      "drake::symbolic::Expression": {
+        "file": "drake/common/symbolic.h",
+        "inst": []
+      },
+      "std::normal_distribution": {
+        "file": "drake/common/symbolic.h",
+        "inst": ["drake::symbolic::Expression"]
+      }
+    }
   }
 }
