@@ -76,8 +76,4 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 find_package(AutoPyBind11 REQUIRED)
 autopybind11_fetch_build_pybind11()
-autopybind11_add_module(example JSON_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/wrapper_input.json
-                                  DESTINATION ${CMAKE_CURRENT_BINARY_DIR}
-                                  LINK_LIBRARIES drake::drake
-                                  NAMESPACE drake
-                       )
+add_subdirectory(pydrake)

@@ -1,0 +1,3 @@
+includes: /opt/drake/include;/opt/drake/include/drake_lcmtypes;/opt/drake/include/lcm;/opt/drake/include/lcmtypes;/usr/include/eigen3;/opt/drake/include/fmt;/opt/drake/include/ignition-math6;/opt/drake/include/lcm;/opt/drake/include/lcmtypes;/opt/drake/include/lcmtypes;/opt/drake/include/spdlog;/usr/include
+c_std: -std=c++1z
+defines: FMT_HEADER_ONLY=1;HAVE_SPDLOG;SPDLOG_COMPILED_LIB;SPDLOG_FMT_EXTERNAL

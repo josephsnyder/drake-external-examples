@@ -1,0 +1,10 @@
+module_cpp : |
+  #include <pybind11/eigen.h>
+  #include <pybind11/pybind11.h>
+  #include "drake/common/drake_assert.h"
+  {includes}
+  namespace py = pybind11;
+  void auto_bind_{namespace}(py::module &m)
+  {{
+    {defs}
+  }}

@@ -1,0 +1,36 @@
+{
+  "drake": {
+    "symbolic": {
+      "classes": {
+        "Environment": {
+          "file": "drake/common/symbolic.h",
+          "inst": []
+        },
+        "Expression": {
+          "file": "drake/common/symbolic.h",
+          "inst": []
+        },
+        "FormulaCell": {
+          "file": "drake/common/symbolic_formula_cell.h",
+          "inst": []
+        },
+        "Formula": {
+          "file": "drake/common/symbolic_formula_cell.h",
+          "inst": []
+        },
+        "Monomial": {
+          "file": "drake/common/symbolic.h",
+          "inst": []
+        },
+        "Variable": {
+          "file": "drake/common/symbolic.h",
+          "inst": []
+        },
+        "Polynomial": {
+          "file": "drake/common/symbolic.h",
+          "inst": []
+        }
+      }
+    }
+  }
+}
