@@ -1,0 +1,19 @@
+{
+  "drake": {
+    "classes": {
+      "RandomGenerator": {
+        "file": "drake/common/random.h",
+        "inst": []
+      },
+      "Polynomial": {
+        "file": "drake/common/polynomial.h",
+        "inst": ["double"]
+      }
+    },
+    "enums": {
+      "ToleranceType": {
+        "file": "drake/common/polynomial.h"
+      }
+    }
+  }
+}
