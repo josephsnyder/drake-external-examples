@@ -1,0 +1,18 @@
+{
+  "drake": {
+    "classes": {
+      "DrakeLcmInterface": {
+        "inst": [],
+        "file": "drake/lcm/drake_lcm_interface.h"
+      },
+      "DrakeLcm": {
+        "inst": [],
+        "file": "drake/lcm/drake_lcm.h"
+      },
+      "DrakeMockLcm": {
+        "inst": [],
+        "file": "drake/lcm/drake_mock_lcm.h"
+      }
+    }
+  }
+}
