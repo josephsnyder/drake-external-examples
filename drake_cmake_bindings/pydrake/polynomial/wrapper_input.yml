@@ -1,0 +1,6 @@
+drake:
+  classes:
+    Polynomial:
+      file: "drake/common/polynomial.h"
+      inst: ["double"]
+      cust_name: ["Polynomial"]

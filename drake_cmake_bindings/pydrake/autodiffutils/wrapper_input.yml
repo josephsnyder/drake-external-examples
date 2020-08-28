@@ -1,0 +1,7 @@
+drake:
+  math:
+    classes:
+        AutoDiffXd:
+          file: "drake/math/autodiff.h"
+          inst: []
+          cust_name: AutoDiffXd

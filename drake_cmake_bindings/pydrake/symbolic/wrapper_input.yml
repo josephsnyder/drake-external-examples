@@ -1,0 +1,23 @@
+drake:
+  symbolic:
+    classes:
+      Variable:
+        file: "drake/common/symbolic.h"
+        inst: []
+        cust_name: Variable
+      Expression:
+        file: "drake/common/symbolic.h"
+        inst: []
+        cust_name: Expression
+      Environment:
+        file: "drake/common/symbolic.h"
+        inst: []
+        cust_name: Environment
+      #Formula:
+      #  file: "drake/common/symbolic_formula_cell.h"
+      #  inst: []
+      #  cust_name: Formula
+      #FormulaCell:
+      #  file: "drake/common/symbolic_formula_cell.h"
+      #  inst: []
+      #  cust_name: FormulaCell

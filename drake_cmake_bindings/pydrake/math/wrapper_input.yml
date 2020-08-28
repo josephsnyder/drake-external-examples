@@ -1,0 +1,15 @@
+drake:
+  math:
+    classes:
+      RotationMatrix:
+        file: "drake/math/rotation_matrix.h"
+        inst: ["double"]
+        cust_name: ["RotationMatrix"]
+      RollPitchYaw:
+        file: "drake/math/rotation_matrix.h"
+        inst: ["double"]
+        cust_name: ["RollPitchYaw"]
+      BarycentricMesh:
+        file: "drake/math/barycentric.h"
+        inst: []
+        cust_name: "BarycentricMesh"

@@ -1,0 +1,5 @@
+drake:
+  enums:
+    ToleranceType:
+      file: "drake/common/constants.h"
+      cust_name: ToleranceType

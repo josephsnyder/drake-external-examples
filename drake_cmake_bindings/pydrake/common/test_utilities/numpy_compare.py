@@ -17,17 +17,17 @@ from itertools import product
 
 import numpy as np
 
-from pydrake.autodiffutils.autodiffutils import AutoDiffXd_py
-from pydrake.symbolic.symbolic import (
-    Expression_py, Formula_py, Monomial_py, Polynomial_py, Variable_py)
-from pydrake.common.common import Polynomial_double_py as RawPolynomial
+from pydrake.autodiffutils import AutoDiffXd
+from pydrake.symbolic import (
+    Expression, Formula, Monomial, Polynomial, Variable)
+from pydrake.polynomial import Polynomial as RawPolynomial
 
 
 class _UnwantedEquality(AssertionError):
     pass
 
 
-class _Registry(object):
+class _Registry:
     # Scalar comparator.
     # `assert_eq` will be vectorized; it should raise an assertion error upon
     # first inequality.
@@ -181,9 +181,9 @@ def _register_autodiff():
                 and (a.derivatives() == b.derivatives()).all()):
             raise _UnwantedEquality(str(a.value(), b.derivatives()))
 
-    _registry.register_to_float(AutoDiffXd_py, AutoDiffXd_py.value)
+    _registry.register_to_float(AutoDiffXd, AutoDiffXd.value)
     _registry.register_comparator(
-        AutoDiffXd_py, AutoDiffXd_py, autodiff_eq, autodiff_ne)
+        AutoDiffXd, AutoDiffXd, autodiff_eq, autodiff_ne)
 
 
 def _register_symbolic():
@@ -197,24 +197,24 @@ def _register_symbolic():
     def from_bool(x):
         assert isinstance(x, (bool, np.bool_)), type(x)
         if x:
-            return Formula_py.True_()
+            return Formula.True_()
         else:
-            return Formula_py.False_()
+            return Formula.False_()
 
-    def Formula_py_bool_eq(a, b):
+    def formula_bool_eq(a, b):
         return sym_struct_eq(a, from_bool(b))
 
-    def Formula_py_bool_ne(a, b):
+    def formula_bool_ne(a, b):
         return sym_struct_ne(a, from_bool(b))
 
-    _registry.register_to_float(Expression_py, Expression_py.Evaluate)
-    _registry.register_comparator(Formula_py, str, _str_eq, _str_ne)
+    _registry.register_to_float(Expression, Expression.Evaluate)
+    _registry.register_comparator(Formula, str, _str_eq, _str_ne)
     # Ensure that we can do simple boolean comparison, e.g. in lieu of
     # `unittest.TestCase.assertTrue`, use
     # `numpy_compare.assert_equal(f, True)`.
     _registry.register_comparator(
-        Formula_py, bool, Formula_py_bool_eq, Formula_py_bool_ne)
-    lhs_types = [Variable_py, Expression_py, Polynomial_py, Monomial_py]
+        Formula, bool, formula_bool_eq, formula_bool_ne)
+    lhs_types = [Variable, Expression, Polynomial, Monomial]
     rhs_types = lhs_types + [float]
     for lhs_type in lhs_types:
         _registry.register_comparator(lhs_type, str, _str_eq, _str_ne)
@@ -242,8 +242,8 @@ def check_all_types(check_func):
     @functools.wraps(check_func)
     def wrapper(*args, **kwargs):
         check_func(*args, T=float, **kwargs)
-        check_func(*args, T=AutoDiffXd_py, **kwargs)
-        check_func(*args, T=Expression_py, **kwargs)
+        check_func(*args, T=AutoDiffXd, **kwargs)
+        check_func(*args, T=Expression, **kwargs)
 
     return wrapper
 
@@ -255,6 +255,6 @@ def check_nonsymbolic_types(check_func):
     @functools.wraps(check_func)
     def wrapper(*args, **kwargs):
         check_func(*args, T=float, **kwargs)
-        check_func(*args, T=AutoDiffXd_py, **kwargs)
+        check_func(*args, T=AutoDiffXd, **kwargs)
 
     return wrapper

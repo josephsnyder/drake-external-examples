@@ -1,0 +1,20 @@
+drake:
+  systems:
+    classes:
+      LeafSystem:
+        file: "drake/systems/framework/leaf_system.h"
+        inst: ["double"]
+        cust_name: ["LeafSystem"]
+      System:
+        file: "drake/systems/framework/system_constraint.h"
+        inst: ["double"]
+        cust_name: ["System"]
+      SystemBase:
+        file: "drake/systems/framework/system_base.h"
+        inst: []
+        cust_name: SystemBase
+      SystemMessageInterface:
+        file: "drake/systems/framework/framework_common.h"
+        inst: []
+        cust_name: SystemMessageInterface
+

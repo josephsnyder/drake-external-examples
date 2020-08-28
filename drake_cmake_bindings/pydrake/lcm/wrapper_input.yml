@@ -1,0 +1,15 @@
+drake:
+  lcm:
+    classes:
+      DrakeLcm:
+        file: "drake/lcm/drake_lcm.h"
+        inst: []
+        cust_name: "DrakeLcm"
+      DrakeLcmInterface:
+        file: "drake/lcm/drake_lcm_interface.h"
+        inst: []
+        cust_name: DrakeLcmInterface
+      DrakeMockLcm:
+        file: "drake/lcm/drake_mock_lcm.h"
+        inst: []
+        cust_name: "DrakeMockLcm"
