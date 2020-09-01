@@ -5,6 +5,14 @@ drake:
         file: "drake/common/symbolic.h"
         inst: []
         cust_name: Variable
+      Monomial:
+        file: "drake/common/symbolic.h"
+        inst: []
+        cust_name: Monomial
+      Polynomial:
+        file: "drake/common/symbolic.h"
+        inst: []
+        cust_name: Polynomial
       Expression:
         file: "drake/common/symbolic.h"
         inst: []
@@ -13,11 +21,11 @@ drake:
         file: "drake/common/symbolic.h"
         inst: []
         cust_name: Environment
-      #Formula:
-      #  file: "drake/common/symbolic_formula_cell.h"
-      #  inst: []
-      #  cust_name: Formula
-      #FormulaCell:
-      #  file: "drake/common/symbolic_formula_cell.h"
-      #  inst: []
-      #  cust_name: FormulaCell
+      Formula:
+        file: "drake/common/symbolic_formula_cell.h"
+        inst: []
+        cust_name: Formula
+      FormulaCell:
+        file: "drake/common/symbolic_formula_cell.h"
+        inst: []
+        cust_name: FormulaCell
