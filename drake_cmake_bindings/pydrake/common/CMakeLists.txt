@@ -7,6 +7,8 @@ autopybind11_add_module(common
 file(GENERATE
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/__init__.py
   CONTENT "from .common import *")
-file(
-  COPY test_utilities
-  DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+foreach(needed_object "test_utilities;containers.py;deprecation.py")
+  file(
+    COPY ${needed_object}
+    DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+endforeach()
