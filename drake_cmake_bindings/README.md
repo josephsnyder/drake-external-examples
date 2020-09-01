@@ -41,66 +41,33 @@ sudo tar -xvzf drake-latest-bionic.tar.gz -C /opt
 # git clone https://github.com/RobotLocomotion/drake.git
 # (mkdir drake-build && cd drake-build && cmake -DCMAKE_INSTALL_PREFIX=/opt/drake -DWITH_GUROBI=ON ../drake && make)
 
-###############################################################
-# Build Everything
-###############################################################
-git clone https://github.com/RobotLocomotion/drake-external-examples.git
-cd drake-external-examples
-mkdir drake_cmake_installed-build && cd drake_cmake_installed-build
-cmake -DCMAKE_PREFIX_PATH=/opt/drake ../drake_cmake_installed
-make
+# Install AutoPyBind11
+################################################################
 
-###############################################################
-# Execute
-###############################################################
-# A demo
-/opt/drake/bin/drake-visualizer &
-(cd src/particles && exec ./uniformly_accelerated_particle)
+Install the AutoPyBind11 program from:
 
-# (Optionally) Run Tests
-make test
-```
+ https://gitlab.kitware.com/autopybind11/autopybind11
 
-# Examples
+* Optional: Create Python3 virtual environment 
+* pip install AutoPyBind11
+  * cd to autopybind11
+  * python3 -m pip install .
 
-Drake specific Examples:
+# Configure and Build:
 
-* [Simple Continuous Time System](src/simple_continuous_time_system/README.md)
-* [Particle Demo](src/particles/README.md)
-* [Find Resources](src/find_resource/README.md)
+cd drake_cmake_bindings
+mdkir build 
+cd build 
+cmake -D AutoPyBind11_DIR=<path/to>/autopybind11 ..
 
-Compatibility Examples:
 
-* [PCL](src/pcl/README.md)
 
-# Developer Testing
+# Execute Tests:
 
-If you are a Drake Developer making build or API changes that may affect the
-downstream interface, please test this locally on your system.
+Remove existing download's version of pydrake
+  * mv /opt/drake/lib/python3.6/site-packages/pydrake /opt/drake/lib/python3.6/site-packages/pydrake.old
+Symbolically link the build/pydrake directory to the above location
+ * ln -s <path/to>/drake_cmake_bindings/build/pydrake /opt/drake/lib/python3.6/site-packages/pydrake
 
-These build instructions are adapted from those above, but will use an existing
-source tree of Drake (but *not* installing it to `/opt/drake`),
-build this project, and then run all available tests:
-
-```shell
-# Build development version of Drake, ensuring no old artifacts are present.
-cd drake  # Where you are developing.
-rm -rf ../drake-build && mkdir ../drake-build && cd ../drake-build
-cmake ../drake  # Configure Gurobi, Mosek, etc, if needed.
-# Build locally.
-make
-# Record the build's install directory.
-drake_install=${PWD}/install
-
-# Build this project using a development version of Drake.
-cd ..
-# Clone this repository if you have not already.
-git clone https://github.com/RobotLocomotion/drake-external-examples.git
-cd drake-external-examples
-# Follow "Install Prerequisites" in the instructions linked above if you
-# have not already.
-mkdir drake_cmake_installed-build && cd drake_cmake_installed-build
-cmake -DCMAKE_PREFIX_PATH=/opt/drake ../drake_cmake_installed
-make
-ctest
-```
+Add that directory to python path and execute tests
+ * PYTHONPATH="/opt/drake/lib/python3.6/site-packages/" python3 <test_script>
