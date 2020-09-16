@@ -5,14 +5,17 @@ drake:
         file: "drake/systems/framework/leaf_system.h"
         inst: ["double"]
         cust_name: ["LeafSystem"]
+        exclude: ["DeclareAbstractState", "DoCalcWitnessValue"]
       System:
-        file: "drake/systems/framework/system_constraint.h"
+        file: "drake/systems/framework/system.h"
         inst: ["double"]
         cust_name: ["System"]
+        exclude: ["AddConstraint"]
       SystemBase:
         file: "drake/systems/framework/system_base.h"
         inst: []
         cust_name: SystemBase
+        exclude: ["AddInputPort","AddOutputPort"]
       SystemMessageInterface:
         file: "drake/systems/framework/framework_common.h"
         inst: []
