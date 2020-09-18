@@ -1,4 +1,4 @@
-autopybind11_add_module(common
+autopybind11_add_module(common_module
   YAML_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/wrapper_input.yml
   CONFIG_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/config.yml
   DESTINATION ${CMAKE_CURRENT_BINARY_DIR}
@@ -6,7 +6,7 @@ autopybind11_add_module(common
   C_STD_FLAG "-std=c++1z")
 file(GENERATE
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/__init__.py
-  CONTENT "from .common import *")
+  CONTENT "from .common_module import *")
 foreach(needed_object "test_utilities;containers.py;deprecation.py")
   file(
     COPY ${needed_object}
