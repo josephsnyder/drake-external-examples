@@ -1,6 +1,8 @@
-drake:
-  classes:
-    Polynomial:
-      file: "drake/common/polynomial.h"
-      inst: ["double"]
-      cust_name: ["Polynomial"]
+files:
+  "drake/common/polynomial.h":
+    drake:
+      classes:
+        Polynomial:
+          inst: ["double"]
+          cust_name: ["Polynomial"]
+          addl_inst: ["template drake::Polynomial<double>::Polynomial(Eigen::MatrixBase<Eigen::VectorXd>const &);"]

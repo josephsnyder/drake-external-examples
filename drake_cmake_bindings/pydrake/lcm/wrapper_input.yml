@@ -1,15 +1,31 @@
-drake:
-  lcm:
-    classes:
-      DrakeLcm:
-        file: "drake/lcm/drake_lcm.h"
-        inst: []
-        cust_name: "DrakeLcm"
-      DrakeLcmInterface:
-        file: "drake/lcm/drake_lcm_interface.h"
-        inst: []
-        cust_name: DrakeLcmInterface
-      DrakeMockLcm:
-        file: "drake/lcm/drake_mock_lcm.h"
-        inst: []
-        cust_name: "DrakeMockLcm"
+files:
+  "drake/lcm/drake_lcm_interface.h":
+    namespaces:
+      drake:
+        namespaces:
+          lcm:
+            classes:
+              DrakeLcmInterface:
+                inst: [ ]
+                cust_name: DrakeLcmInterface
+              DrakeSubscriptionInterface:
+                inst: [ ]
+                cust_name: DrakeSubscriptionInterface
+  "drake/lcm/drake_lcm.h":
+    namespaces:
+      drake:
+        namespaces:
+          lcm:
+            classes:
+              DrakeLcm:
+                inst: []
+                cust_name: "DrakeLcm"
+  "drake/lcm/drake_mock_lcm.h":
+    namespaces:
+      drake:
+        namespaces:
+          lcm:
+            classes:
+              DrakeMockLcm:
+                inst: []
+                cust_name: "DrakeMockLcm"

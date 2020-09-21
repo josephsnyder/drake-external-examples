@@ -1,21 +1,33 @@
-drake:
-  perception:
-    pc_flags:
-      enums:
-        BaseField:
-          file: "drake/perception/point_cloud_flags.h"
-      classes:
-        Fields:
-          file: "drake/perception/point_cloud_flags.h"
-          inst: []
-          cust_name: Fields
-    classes:
-      PointCloud:
-        file: "drake/perception/point_cloud.h"
-        inst: []
-        cust_name: PointCloud
-      DepthImageToPointCloud:
-        file: "drake/perception/depth_image_to_point_cloud.h"
-        inst: []
-        cust_name: DepthImageToPointCloud
+files:
+  "drake/perception/point_cloud_flags.h":
+    namespaces:
+      drake:
+        namespaces:
+          perception:
+            namespaces:
+              pc_flags:
+                enums:
+                  BaseField:
+                classes:
+                  Fields:
+                    inst: []
+                    cust_name: Fields
+  "drake/perception/point_cloud.h":
+    namespaces:
+      drake:
+        namespaces:
+          perception:
+            classes:
+              PointCloud:
+                inst: []
+                cust_name: PointCloud
+  "drake/perception/depth_image_to_point_cloud.h":
+    namespaces:
+      drake:
+        namespaces:
+          perception:
+            classes:
+              DepthImageToPointCloud:
+                inst: []
+                cust_name: DepthImageToPointCloud
 

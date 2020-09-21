@@ -1,9 +1,10 @@
-add_subdirectory(autodiffutils)
+# add_subdirectory(autodiffutils)
 add_subdirectory(common)
 add_subdirectory(lcm)
 add_subdirectory(math)
 add_subdirectory(systems)
 add_subdirectory(perception)
-add_subdirectory(polynomial)
 add_subdirectory(symbolic)
 add_subdirectory(test)
+
+add_subdirectory(polynomial)

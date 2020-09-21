@@ -1,23 +1,41 @@
-drake:
-  systems:
-    classes:
-      LeafSystem:
-        file: "drake/systems/framework/leaf_system.h"
-        inst: ["double"]
-        cust_name: ["LeafSystem"]
-        exclude: ["DeclareAbstractState", "DoCalcWitnessValue"]
-      System:
-        file: "drake/systems/framework/system.h"
-        inst: ["double"]
-        cust_name: ["System"]
-        exclude: ["AddConstraint"]
-      SystemBase:
-        file: "drake/systems/framework/system_base.h"
-        inst: []
-        cust_name: SystemBase
-        exclude: ["AddInputPort","AddOutputPort"]
-      SystemMessageInterface:
-        file: "drake/systems/framework/framework_common.h"
-        inst: []
-        cust_name: SystemMessageInterface
+files:
+  "drake/systems/framework/leaf_system.h":
+    namespaces:
+      drake:
+        namespaces:
+          systems:
+            classes:
+              LeafSystem:
+                inst: ["double"]
+                cust_name: ["LeafSystem"]
+                exclude: ["DeclareAbstractState", "DoCalcWitnessValue"]
+  "drake/systems/framework/system.h":
+    namespaces:
+      drake:
+        namespaces:
+          systems:
+            classes:
+              System:
+                inst: ["double"]
+                cust_name: ["System"]
+                exclude: ["AddConstraint"]
+  "drake/systems/framework/system_base.h":
+    namespaces:
+      drake:
+        namespaces:
+          systems:
+            classes:
+              SystemBase:
+                inst: []
+                cust_name: SystemBase
+                exclude: ["AddInputPort","AddOutputPort"]
+  "drake/systems/framework/framework_common.h":
+    namespaces:
+      drake:
+        namespaces:
+          systems:
+            classes:
+              SystemMessageInterface:
+                inst: []
+                cust_name: SystemMessageInterface
 

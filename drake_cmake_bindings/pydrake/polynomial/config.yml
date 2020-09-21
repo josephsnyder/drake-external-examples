@@ -1,1 +1,19 @@
 ignore_namespace_structure: True
+class_module_cpp: "#include <pybind11/pybind11.h>\n
+  #include <pybind11/eigen.h>\n
+  #include <pybind11/stl.h>\n
+  #include <pybind11/chrono.h>\n
+  #include <pybind11/complex.h>\n
+  #include <pybind11/functional.h>\n
+  {includes}\n
+  {trampoline_str}\n
+  {publicist_str}\n
+
+  namespace py = pybind11;\n
+  void apb11_{module}_{namespace}_register(py::module &m)\n
+  {{\n
+    static bool called = false;\n
+    if(called) {{ return; }}\n
+    called = true;\n
+    {defs}\n
+  }}\n"

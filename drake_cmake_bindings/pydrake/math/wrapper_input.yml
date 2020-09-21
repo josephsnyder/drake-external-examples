@@ -1,15 +1,22 @@
-drake:
-  math:
-    classes:
-      RotationMatrix:
-        file: "drake/math/rotation_matrix.h"
-        inst: ["double"]
-        cust_name: ["RotationMatrix"]
-      RollPitchYaw:
-        file: "drake/math/rotation_matrix.h"
-        inst: ["double"]
-        cust_name: ["RollPitchYaw"]
-      BarycentricMesh:
-        file: "drake/math/barycentric.h"
-        inst: []
-        cust_name: "BarycentricMesh"
+files:
+  "drake/math/rotation_matrix.h":
+    namespaces:
+      drake:
+        namespaces:
+          math:
+            classes:
+              RotationMatrix:
+                inst: ["double"]
+                cust_name: ["RotationMatrix"]
+              RollPitchYaw:
+                inst: ["double"]
+                cust_name: ["RollPitchYaw"]
+  "drake/math/barycentric.h":
+    namespaces:
+      drake:
+        namespaces:
+          math:
+            classes:
+              BarycentricMesh:
+                inst: []
+                cust_name: "BarycentricMesh"

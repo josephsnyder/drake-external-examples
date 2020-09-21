@@ -1,31 +1,33 @@
-drake:
-  symbolic:
-    classes:
-      Variable:
-        file: "drake/common/symbolic.h"
-        inst: []
-        cust_name: Variable
-      Monomial:
-        file: "drake/common/symbolic.h"
-        inst: []
-        cust_name: Monomial
-      Polynomial:
-        file: "drake/common/symbolic.h"
-        inst: []
-        cust_name: Polynomial
-      Expression:
-        file: "drake/common/symbolic.h"
-        inst: []
-        cust_name: Expression
-      Environment:
-        file: "drake/common/symbolic.h"
-        inst: []
-        cust_name: Environment
-      Formula:
-        file: "drake/common/symbolic_formula_cell.h"
-        inst: []
-        cust_name: Formula
-      FormulaCell:
-        file: "drake/common/symbolic_formula_cell.h"
-        inst: []
-        cust_name: FormulaCell
+files:
+  "drake/common/symbolic.h":
+    namespaces:
+        drake:
+          namespaces:
+            symbolic:
+              classes:
+                Variable:
+                  inst: []
+                  cust_name: Variable
+                Monomial:
+                  inst: []
+                  cust_name: Monomial
+                  inst: []
+                  cust_name: Polynomial
+                Expression:
+                  inst: []
+                  cust_name: Expression
+                Environment:
+                  inst: []
+                  cust_name: Environment
+  "drake/common/symbolic_formula_cell.h":
+    namespaces:
+        drake:
+          namespaces:
+            symbolic:
+              classes:
+                Formula:
+                  inst: []
+                  cust_name: Formula
+                FormulaCell:
+                  inst: []
+                  cust_name: FormulaCell

@@ -1,5 +1,18 @@
-drake:
-  enums:
-    ToleranceType:
-      file: "drake/common/constants.h"
-      cust_name: ToleranceType
+files:
+  "drake/common/constants.h":
+    namespaces:
+      drake:
+        enums:
+          ToleranceType:
+            cust_name: ToleranceType
+            cust_vals:
+              kAbsolute: absolute
+              kRelative: relative
+  "drake/common/random.h":
+    namespaces:
+      drake:
+        classes:
+          RandomGenerator:
+            inst: []
+            cust_name: RandomGenerator
+

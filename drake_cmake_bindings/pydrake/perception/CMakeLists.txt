@@ -5,6 +5,6 @@ autopybind11_add_module(perception_module
   LINK_LIBRARIES drake::drake systems_module
   C_STD_FLAG "-std=c++1z")
 
-file(GENERATE
+ file(GENERATE
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/__init__.py
   CONTENT "from .perception_module import *")
